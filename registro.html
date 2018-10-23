@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta charset="utf-8">
+        <title>Registro de clientes</title>
+        <link href="css/estilos.css" rel="stylesheet" type="text/css">
+        <!--script type="text/javascript" src="vali_campos.js"></script-->
+    </head>
+
+    <body>
+        <header>
+            <div class="wrapper">
+                <div class="logo">Seguros Mireles</div>
+                <nav>
+                    <a href="main.html">Polizas</a>
+                    <a href="directorio.php">Directorio</a>
+                </nav>
+            </div>
+        </header>
+
+        <form action="registro.php" name="frmRegistro" method="post">
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" required name="c_nombre"/>
+            </div>
+            <div class="form-group">
+                <label for="direccion">Dirección:</label>
+                <input type="text" class="form-control" id="direccion" required name="c_direccion"/>
+            </div>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" class="form-control" id="telefono" name="c_telefono"/>
+            </div>
+            <div class="form-group">
+                <label for="celular">Celular:</label>
+                <input type="text" class="form-control" id="celular" name="c_celular"/>
+            </div>
+            <div class="form-group">
+                <label for="mail">E-mail:</label>
+                <input type="text" class="form-control" id="mail" name="c_email"/>
+            </div>
+            <div class="form-group">
+                <label for="email2">E-mail:</label>
+                <input type="text" class="form-control" id="email2" name="c_email2"/>
+            </div>
+            <div class="form-group">
+                <label for="relacionado">Relacionado:</label>
+                <input type="text" class="form-control" id="relacionado" name="c_relacionado"/>
+            </div>
+            <div class="form-group">
+                <label for="compania">Compañia:</label>
+                <input type="text" class="form-control" id="compania" name="c_compania"/>
+            </div>
+            <div>
+                <input type="hidden" name="frmenviado" value="true"/>
+            </div>
+            <div>
+                <button type="submit" class="btn">Registrar</button>
+            
+                <button type="reset" class="btn">Cancelar</button>
+            </div>
+        </form>
+    </body>
+</html>
