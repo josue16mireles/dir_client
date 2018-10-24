@@ -17,13 +17,13 @@
     $reg_not_duplicate = "SELECT * from directorio WHERE nombre = '$c_nombre'";
     $result = mysqli_query($enlace, $reg_not_duplicate);
     if(mysqli_num_rows($result)>0){
-        //si el resultado es mayor a cero imprimimos que el usuario ya existe
+        //si el resultado es mayor a cero imprimimos que el usuario ya existe con js
         echo '<script type="text/javascript" >
         alert("El cliente ya fue registrado"); //te mostrara el mensaje que quieras
         window.location="registro.html"; //te redireccionara a la pagina que deseas
     </script> ';
     } else {
-        //si no hay resultados ingresamos el cliente a la base de datos
+        //si no hay resultados ingresamos el cliente a la base de datos con el sig. query en rojo los campos de la tabla en azul las variables
         $registrar_c = "INSERT INTO directorio (nombre, direccion, telefono, celular, email, email2, relacionado, compania) VALUES ('$c_nombre', '$c_direccion', '$c_telefono', '$c_celular', '$c_email', '$c_email2', '$c_relacionado','$c_compania')";
         if(mysqli_query($enlace, $registrar_c)){
             //header("Location: registro.html");
