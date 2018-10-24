@@ -1,12 +1,13 @@
 <?php
     //función para el llenado de los input al presionar el botón de editar
-    $cons_edit = Con_client($_GET['idE']);
+    $cons_edit = Con_client($_GET['idE']);//idE es la variable traida desde directorio la cual contiene el id del registro en la tabla de la DB
 
     function Con_client($idE_client){
         include("conexion.php");
         $enlace = conectarse();
-
+        //consulta que selecciona todos los datos que contiene el id
         $sql_con_client = mysqli_query($enlace, 'SELECT * FROM directorio WHERE id = '. $idE_client);
+        //el array contiene los datos de la consulta, aquí no se usa en un while porque solo se inspecciona un registro y no toda la tabla
         $row = mysqli_fetch_assoc($sql_con_client);
         return[
             $row['id'],
@@ -44,10 +45,12 @@
 
         <form action="editar2.php" method="post">
             <div>
+                <!--este input lleva el id a editar2.php al hacer clic de esta manera al realizar el update solo se afecta al registro con ese id-->
                 <input type="hidden" name="c_id" value="<?php echo $cons_edit[0]?>"/>
             </div>
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
+                <!--la variable cons_edit llama a la función entre [] se pone la posición que queremos llamar del arreglo-->
                 <input type="text"class="form-control" id="nombre" name="c_nombre" value="<?php echo $cons_edit[1]?>"/>
             </div>
             <div class="form-group">
